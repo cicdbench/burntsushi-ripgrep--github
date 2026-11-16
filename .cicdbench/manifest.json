@@ -1,0 +1,45 @@
+{
+  "provider": "github",
+  "round": "gate-r0",
+  "manifests": {
+    ".github/workflows/ci.yml": {
+      "removedTriggers": [
+        "push",
+        "schedule"
+      ],
+      "removedEnv": [],
+      "removedJobs": [],
+      "runsOnChanges": [
+        {
+          "job": "test",
+          "from": "${{ matrix.os }}"
+        },
+        {
+          "job": "wasm",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "rustfmt",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "docs",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "benches",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "fuzz_testing",
+          "from": "ubuntu-latest"
+        }
+      ],
+      "localReusable": [],
+      "removedSteps": []
+    }
+  },
+  "deleted": [
+    ".github/workflows/release.yml"
+  ]
+}
