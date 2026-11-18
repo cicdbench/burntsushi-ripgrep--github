@@ -481,3 +481,4 @@ fn print_stats<W: Write>(
         )
     }
 }
+// cicdbench edit
